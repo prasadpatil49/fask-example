@@ -8,15 +8,18 @@ import os
 # current module (__name__) as argument.
 app = Flask(__name__)
 
+mysql = MySQL()
 
 app.config['MYSQL_HOST'] = os.environ['MYSQL_SERVICE_PORT_3306_TCP_ADDR']
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = os.environ['MYSQL_ROOT_PASSWORD']
 app.config['MYSQL_DB'] = 'sakila'
 
-mysql = MySQL(app)
+mysql.init_app(app)
 
-cursor = mysql.get_db().cursor()
+
+conn = mysql.connect()
+cursor =conn.cursor()
 
 cursor.execute("show tables")
 data = cursor.fetchone()
