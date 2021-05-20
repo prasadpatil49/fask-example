@@ -16,7 +16,8 @@ app.config['MYSQL_DB'] = 'sakila'
 
 mysql = MySQL(app)
 
-cursor = mysql.connection.cursor()
+cursor = mysql.get_db().cursor()
+
 cursor.execute("show tables")
 data = cursor.fetchone()
 
