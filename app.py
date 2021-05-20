@@ -19,7 +19,8 @@ def someName():
     sql = "show tables"
     cursor.execute(sql)
     results = cursor.fetchall()
-    return render_template('index.html', results=results)
+    print (results)
+    return "hello"
 
 if __name__ == '__main__':
 
