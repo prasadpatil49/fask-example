@@ -9,7 +9,7 @@ db_pass = os.environ['MYSQL_ROOT_PASSWORD']
 db_name = 'sakila'
 
 
-db = pymysql.connect(db_host, db_user, db_pass, db_name)
+db = pymysql.connect(host=db_host, user=db_user, password=db_pass, database=db_name)
 
 app = Flask(__name__)
 api = Api(app)
