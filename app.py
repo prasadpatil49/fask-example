@@ -1,7 +1,7 @@
 
 from flask import Flask, request, render_template
 import pymysql
-
+import os
 
 db_host = os.environ['MYSQL_SERVICE_PORT_3306_TCP_ADDR']
 db_user = 'root'
