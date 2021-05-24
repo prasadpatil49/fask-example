@@ -1,5 +1,6 @@
 
 from flask import Flask, request, render_template
+from tabulate import tabulate
 import pymysql
 import os
 
