@@ -19,6 +19,8 @@ def someName():
     sql = "select * from actor_info LIMIT 10"
     cursor.execute(sql)
     results = cursor.fetchall()
+    result_list = list(results)
+    results = [ list(element) for element in result_list ]
     print (results)
     return "hello"
 
