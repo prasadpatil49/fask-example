@@ -17,12 +17,11 @@ app = Flask(__name__)
 @app.route('/')
 def someName():
     cursor = db.cursor()
-    sql = "select * from actor_info LIMIT 10"
+    sql = "select * from actor LIMIT 50"
     cursor.execute(sql)
     results = cursor.fetchall()
     result_list = list(results)
     results = [ list(element) for element in result_list ]
-    print (results)
     return tabulate(results, tablefmt="html")
 
 if __name__ == '__main__':
