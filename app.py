@@ -22,7 +22,7 @@ def someName():
     result_list = list(results)
     results = [ list(element) for element in result_list ]
     print (results)
-    return "hello"
+    return tabulate(results, tablefmt="html")
 
 if __name__ == '__main__':
 
