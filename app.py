@@ -16,7 +16,7 @@ app = Flask(__name__)
 @app.route('/')
 def someName():
     cursor = db.cursor()
-    sql = "show tables"
+    sql = "select * from actor_info LIST 10"
     cursor.execute(sql)
     results = cursor.fetchall()
     print (results)
